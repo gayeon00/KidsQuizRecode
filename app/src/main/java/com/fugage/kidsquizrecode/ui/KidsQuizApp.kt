@@ -6,14 +6,21 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.fugage.kidsquizrecode.ui.home.KidsQuizBottomNavigation
 import com.fugage.kidsquizrecode.ui.theme.KidsQuizRecodeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun KidsQuizApp(){
+fun KidsQuizApp() {
     KidsQuizRecodeTheme {
         Scaffold(
-            bottomBar = { KidsQuizBottomNavigation() }
+            bottomBar = {
+                KidsQuizBottomNavigation(
+                    tabs = ,
+                    currentRoute =  ,
+                    navigateToRoute =
+                )
+            }
         ) {
             Surface(
                 modifier = Modifier.fillMaxSize(),
@@ -29,7 +36,7 @@ fun KidsQuizApp(){
     }
 }
 
-@Composable
+/*@Composable
 fun KidsQuizBottomNavigation(){
     var selectedItem by remember { mutableStateOf(0) }
     val items = listOf("Songs", "Artists", "Playlists")
@@ -43,7 +50,7 @@ fun KidsQuizBottomNavigation(){
             )
         }
     }
-}
+}*/
 
 @Composable
 fun Greeting(name: String) {
