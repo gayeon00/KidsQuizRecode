@@ -19,7 +19,7 @@ enum class HomeSections(
     @StringRes val title: Int,
     val icon: ImageVector,
     val route: String
-){
+) {
     STAT(R.string.home_stat, Icons.Outlined.BarChart, "home/stat"),
     QUIZ(R.string.home_quiz, Icons.Outlined.Home, "home/quiz"),
     PROFILE(R.string.home_profile, Icons.Outlined.Home, "home/profile"),
@@ -35,13 +35,13 @@ fun KidsQuizBottomNavigation(
 
     NavigationBar() {
         tabs.forEach { section ->
-            val selected = section==currentSection
+            val selected = section == currentSection
             val text = stringResource(section.title)
             NavigationBarItem(
-                icon = {Icon(section.icon, contentDescription = text)},
-                label = { Text(text = text)},
+                icon = { Icon(section.icon, contentDescription = text) },
+                label = { Text(text = text) },
                 selected = selected,
-                onClick = {navigateToRoute(section.route)}
+                onClick = { navigateToRoute(section.route) }
             )
         }
     }

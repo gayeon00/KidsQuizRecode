@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.fugage.kidsquizrecode.ui.home.HomeSections
 import com.fugage.kidsquizrecode.ui.home.KidsQuizBottomNavigation
 import com.fugage.kidsquizrecode.ui.theme.KidsQuizRecodeTheme
 
@@ -13,12 +14,14 @@ import com.fugage.kidsquizrecode.ui.theme.KidsQuizRecodeTheme
 @Composable
 fun KidsQuizApp() {
     KidsQuizRecodeTheme {
+        val navTabs = HomeSections.values()
+        val appState = rememberKidsQuizAppState()
         Scaffold(
             bottomBar = {
                 KidsQuizBottomNavigation(
-                    tabs = ,
-                    currentRoute =  ,
-                    navigateToRoute =
+                    tabs = navTabs,
+                    currentRoute =  appState.currentRoute!!,
+                    navigateToRoute = appState::navigateToNavRoute
                 )
             }
         ) {
