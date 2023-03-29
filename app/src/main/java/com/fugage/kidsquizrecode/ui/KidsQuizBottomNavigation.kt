@@ -1,9 +1,9 @@
 package com.fugage.kidsquizrecode.ui
 
 import androidx.annotation.StringRes
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Text
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.BarChart
@@ -34,11 +34,11 @@ fun KidsQuizBottomNavigation(
     navController: NavController,
     items: List<Screen>
 ) {
-    BottomNavigation {
+    NavigationBar() {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
         items.forEach { screen ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = { Icon(screen.icon, contentDescription = null) },
                 label = { Text(stringResource(screen.resourceId)) },
                 selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
