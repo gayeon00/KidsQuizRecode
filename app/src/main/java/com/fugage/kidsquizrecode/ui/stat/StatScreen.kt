@@ -9,6 +9,6 @@ fun StatScreen(
     navHostController: NavHostController
 ){
     Surface {
-        Text(text = "Hello window!")
+        Text(text = "StatScreen!")
     }
 }

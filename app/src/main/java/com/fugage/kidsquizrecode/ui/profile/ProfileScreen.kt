@@ -10,6 +10,6 @@ fun ProfileScreen(
     navHostController: NavHostController
 ){
     Surface {
-        Text(text = "Hello 가연!")
+        Text(text = "ProfileScreen")
     }
 }
