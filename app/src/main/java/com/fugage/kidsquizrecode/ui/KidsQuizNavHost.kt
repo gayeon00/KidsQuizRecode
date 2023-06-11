@@ -1,6 +1,9 @@
 package com.fugage.kidsquizrecode.ui
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -9,12 +12,14 @@ import com.fugage.kidsquizrecode.ui.profile.ProfileScreen
 import com.fugage.kidsquizrecode.ui.stat.StatScreen
 
 @Composable
-fun KidsQuizNavGraph(
-    navController: NavHostController
+fun KidsQuizNavHost(
+    navController: NavHostController,
+    paddingValues: PaddingValues
 ){
     NavHost(
         navController,
-        startDestination = Screen.Profile.route
+        startDestination = Screen.Home.route,
+        modifier = Modifier.padding(paddingValues)
     ) {
         composable(Screen.Home.route) { HomeScreen(navController) }
         composable(Screen.Stat.route) { StatScreen(navController) }
