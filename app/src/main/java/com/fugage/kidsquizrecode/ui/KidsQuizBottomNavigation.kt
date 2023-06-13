@@ -18,6 +18,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.fugage.kidsquizrecode.R
+import androidx.compose.ui.Modifier
 
 sealed class Screen(
     val route: String,
@@ -32,9 +33,12 @@ sealed class Screen(
 @Composable
 fun KidsQuizBottomNavigation(
     navController: NavController,
-    items: List<Screen>
+    items: List<Screen>,
+    modifier: Modifier = Modifier
 ) {
-    NavigationBar() {
+    NavigationBar(
+        modifier = modifier
+    ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
         items.forEach { screen ->
