@@ -27,6 +27,11 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 36.sp
     ),
+    headlineLarge = TextStyle(
+        fontFamily = NotoSansKR,
+        fontWeight = FontWeight.Black,
+        fontSize = 30.sp
+    ),
     displayMedium = TextStyle(
         fontFamily = NotoSansKR,
         fontWeight = FontWeight.Bold,
