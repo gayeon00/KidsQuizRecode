@@ -15,14 +15,14 @@ import com.fugage.kidsquizrecode.ui.stat.StatScreen
 fun KidsQuizNavHost(
     navController: NavHostController,
     paddingValues: PaddingValues
-){
+) {
     NavHost(
         navController,
         startDestination = Screen.Home.route,
         modifier = Modifier.padding(paddingValues)
     ) {
-        composable(Screen.Home.route) { HomeScreen(navController) }
-        composable(Screen.Stat.route) { StatScreen(navController) }
-        composable(Screen.Profile.route) { ProfileScreen(navController) }
+        composable(Screen.Home.route) { HomeScreen(navHostController = navController) }
+        composable(Screen.Stat.route) { StatScreen(navHostController = navController) }
+        composable(Screen.Profile.route) { ProfileScreen(navHostController = navController) }
     }
 }
