@@ -55,9 +55,8 @@ dependencies {
     //Icon을 더 많이 쓰기 위해 추가
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    //material design
     implementation "androidx.compose.material3:material3:$material3_version"
-    //scaffold state 사용을 위해 추가
-    implementation 'androidx.compose.material:material:1.4.0'
     //navigation을 위해 추가
     implementation "androidx.navigation:navigation-compose:$nav_version"
     testImplementation 'junit:junit:4.13.2'
