@@ -8,7 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.fugage.kidsquizrecode.ui.home.HomeScreen
-import com.fugage.kidsquizrecode.ui.profile.ProfileScreen
+import com.fugage.kidsquizrecode.ui.my_page.ProfileScreen
 import com.fugage.kidsquizrecode.ui.stat.StatScreen
 
 @Composable
@@ -23,6 +23,6 @@ fun KidsQuizNavHost(
     ) {
         composable(Screen.Home.route) { HomeScreen(navHostController = navController) }
         composable(Screen.Stat.route) { StatScreen(navHostController = navController) }
-        composable(Screen.Profile.route) { ProfileScreen(navHostController = navController) }
+        composable(Screen.MyPage.route) { ProfileScreen(navHostController = navController) }
     }
 }

@@ -2,7 +2,7 @@
     <string name="app_name">KidsQuizRecode</string>
     <string name="stat">통계</string>
     <string name="home">홈</string>
-    <string name="profile">프로필</string>
+    <string name="my_page">마이페이지</string>
     <string name="ask_child_age">우리 아이는 몇 살 인가요?</string>
     <string name="ask_time_interval">몇 분에 한 번씩 퀴즈를 풀까요?</string>
     <string name="age_old">세</string>

@@ -1,4 +1,4 @@
-package com.fugage.kidsquizrecode.ui.profile
+package com.fugage.kidsquizrecode.ui.my_page
 
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text

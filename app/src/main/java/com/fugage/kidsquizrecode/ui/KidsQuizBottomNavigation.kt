@@ -24,17 +24,19 @@ sealed class Screen(
     val route: String,
     @StringRes val resourceId: Int,
     val icon: ImageVector,
+    val title: String
 ) {
-    object Home : Screen("home", R.string.home, Icons.Outlined.Home)
-    object Stat : Screen("stat", R.string.stat, Icons.Outlined.BarChart)
-    object Profile : Screen("profile", R.string.profile, Icons.Outlined.AccountCircle)
+    object Home : Screen("home", R.string.home, Icons.Outlined.Home, "키즈퀴즈")
+    object Stat : Screen("stat", R.string.stat, Icons.Outlined.BarChart, "통계")
+    object MyPage : Screen("my_page", R.string.my_page, Icons.Outlined.AccountCircle, "마이페이지")
 }
 
 @Composable
 fun KidsQuizBottomNavigation(
     navController: NavController,
     items: List<Screen>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onTitleChange: (String) -> Unit
 ) {
     NavigationBar(
         modifier = modifier
@@ -54,6 +56,8 @@ fun KidsQuizBottomNavigation(
                         launchSingleTop = true
                         restoreState = true
                     }
+
+                    onTitleChange(screen.title)
                 }
             )
         }
