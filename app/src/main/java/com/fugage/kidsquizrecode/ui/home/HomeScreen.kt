@@ -1,10 +1,16 @@
 package com.fugage.kidsquizrecode.ui.home
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -34,10 +40,13 @@ fun HomeScreen(
     var agePickerValue by remember { mutableStateOf(0) }
     var fullHourPickerValue by remember { mutableStateOf<Hours>(FullHours(0, 0)) }
 
+    val 
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .padding(PaddingValues(10.dp, 0.dp))
     ) {
         Text(
@@ -45,11 +54,17 @@ fun HomeScreen(
             style = MaterialTheme.typography.displayMedium
         )
 
+        Spacer(modifier = modifier.height(20.dp))
+
         Card(modifier = modifier
+            .fillMaxWidth()
         ) {
             Row(
-                modifier = modifier.padding(PaddingValues(10.dp, 0.dp)),
-                verticalAlignment = Alignment.CenterVertically
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(PaddingValues(10.dp, 0.dp)),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
             ){
                 NumberPicker(
                     value = agePickerValue,
@@ -64,30 +79,57 @@ fun HomeScreen(
 
         }
 
+        Spacer(modifier = modifier.height(20.dp))
+
         Text(
             text = stringResource(R.string.ask_time_interval),
             style = MaterialTheme.typography.displayMedium
         )
+
+        Spacer(modifier = modifier.height(20.dp))
+
         Card(modifier = modifier
+            .fillMaxWidth()
         ) {
-            HoursNumberPicker(
-                modifier = modifier.padding(PaddingValues(10.dp, 0.dp)),
-                value = fullHourPickerValue,
-                onValueChange = { fullHourPickerValue = it },
-                hoursDivider = {
-                    Text(
-                        text = stringResource(R.string.minute)
-                    )
-                },
-                hoursRange = 0..59,
-                minutesDivider = {
-                    Text(
-                        text = stringResource(R.string.second)
-                    )
-                },
-                minutesRange = 0..59,
-                dividersColor = md_theme_light_onSurface
-            )
+            Row(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(PaddingValues(10.dp, 0.dp)),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ){
+                HoursNumberPicker(
+                    modifier = modifier
+                        .width(200.dp),
+                    value = fullHourPickerValue,
+                    onValueChange = { fullHourPickerValue = it },
+                    hoursDivider = {
+                        Text(
+                            text = stringResource(R.string.minute)
+                        )
+                    },
+                    hoursRange = 0..59,
+                    minutesDivider = {
+                        Text(
+                            text = stringResource(R.string.second)
+                        )
+                    },
+                    minutesRange = 0..59,
+                    dividersColor = md_theme_light_onSurface
+                )
+            }
+        }
+
+        Spacer(modifier = modifier.height(30.dp))
+
+        Button(
+            modifier = modifier
+                .fillMaxWidth(),
+            onClick = {
+            /*TODO: 권한 받아오기*/
+            }
+        ) {
+            Text("퀴즈 시작")
         }
     }
 
